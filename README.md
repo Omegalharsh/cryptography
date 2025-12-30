@@ -1,80 +1,76 @@
-# cryptography
-python test1.py encrypt_file <file_path>
-python test1.py decrypt_file <encrypted_file>
-python test1.py encrypt_text
-python test1.py decrypt_text
+🔐 Cryptonix: Advanced Encryption Suite v2.5
 
-🔐 Encryption Workflow
-📝 Text Encryption
+Cryptonix is a professional-grade cryptographic utility designed for secure text and file transformation. It combines modern asymmetric (RSA) and symmetric (AES/DES) algorithms with a high-performance terminal user interface featuring a "Cybersecurity" aesthetic.
 
-AES: Password → PBKDF2 → Fernet
+🚀 Key Features
 
-DES: 8-character key → CBC Mode
+Multi-Algorithm Support:
 
-RSA: Public Key Encryption
+AES-256 (Fernet): Industrial-strength symmetric encryption for files and text.
 
-📂 File Encryption
+RSA-2048: Asymmetric encryption using Public/Private key pairs for secure data exchange.
 
-Generates random AES key
+DES: Legacy symmetric encryption support for compatibility.
 
-Encrypts file data using AES
+Security Hardening:
 
-Encrypts AES key using RSA public key
+ Anti-Brute Force: Integrated lockout system that triggers a 60-second cooldown after 3 failed attempts.
 
-Saves output as .cryptonix
+Password Enforcement: Strict minimum 8-character requirement for all symmetric keys.
 
-⚠️ Important Notes
+Key Derivation: Uses PBKDF2HMAC with SHA256 and 100,000 iterations for maximum security.
 
-Always save the RSA private key shown after encryption
+Professional UI:
 
-Losing the private key means permanent data loss
+  High-contrast Electric Cyan and Amber terminal design.
 
-DES is included for educational purposes only
+  Dynamic Bold Red Alerts for security violations and system lockouts.
 
-AES and RSA are recommended for real-world use
+   Integrated GUI file selection via Zenity.
 
-🎓 Use Cases
+🛠️ Installation
+Prerequisites
 
-Academic cryptography projects
+Ensure you are running a Linux environment (optimized for Kali Linux) and have Python 3.x installed.
+1. Clone the Repository
+Bash
 
-Cybersecurity demonstrations
+        git clone https://github.com/Omegalharsh/cryptonix.git
+        cd cryptonix
 
-Secure file sharing
+2. Install Dependencies
+Bash
 
-Data protection learning tools
+        pip install cryptography pycryptodome
+        sudo apt install zenity
 
-Encryption/decryption practicals
+3. Grant Permissions
+Bash
 
-🧠 Technologies Used
+        chmod +x cryptnoix.sh
 
-Python
+📖 Usage Guide
 
-Cryptography (Fernet, RSA, PBKDF2)
+Launch the suite using the Bash entry point for the full UI experience:
+Bash
 
-PyCryptodome (DES)
+       ./cryptonix.sh
 
-Base64 Encoding
+Encryption Modes
+  
+T 
+  Text Encryption: Encrypt raw strings and view the Base64 output directly in the terminal.
 
-CLI-based UI with ANSI colors
+  File Encryption: Select files via a GUI window. The tool generates a unique RSA key pair for the file, encrypts the content, and saves it with a .cryptonix extension.
 
-📈 Future Enhancements
+Decryption Modes
 
-GUI version (Tkinter / PyQt)
+  AES/DES: Requires the original password used during encryption.
 
-Support for more algorithms (Blowfish, ChaCha20)
+  RSA: Requires pasting the multi-line Private Key block including headers.
 
-Key file import/export
+⚠️ Security Warning
 
-Logging and audit reports
+   Private Keys: Cryptonix generates temporary RSA keys for file encryption. If you lose the Private Key displayed during encryption, your data cannot be recovered.
 
-Cross-platform installer
-
-👨‍💻 Author
-
-Harsh Valani
-Cybersecurity & Software Development Project
-
-📜 License
-
-This project is intended for educational and academic use.
-Use responsibly and do not apply for illegal activities.
+   Lockout: The system will lock you out for 60 seconds if you enter the wrong key or password 3 times.
