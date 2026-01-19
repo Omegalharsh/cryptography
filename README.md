@@ -58,7 +58,7 @@ Bash
 
 Encryption Modes
   
-T 
+ 
   Text Encryption: Encrypt raw strings and view the Base64 output directly in the terminal.
 
   File Encryption: Select files via a GUI window. The tool generates a unique RSA key pair for the file, encrypts the content, and saves it with a .cryptonix extension.
